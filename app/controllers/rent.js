@@ -28,7 +28,9 @@ module.exports = function (models, logger) {
 
 		findCheapest: function (cut, callback) {
 			models.Rent.find({})
-				.sort(["avgRent", 1]).skip(cut * 30).limit(30)
+				.sort({
+					"avgRent": 1
+				}).skip(cut * 30).limit(30)
 				.exec(function (error, place) {
 					callback(place);
 				});
@@ -36,7 +38,9 @@ module.exports = function (models, logger) {
 
 		findExp: function (cut, callback) {
 			models.Rent.find({})
-				.sort(["avgRent", -1]).skip(cut * 30).limit(30)
+				.sort({
+					"avgRent": -1
+				}).skip(cut * 30).limit(30)
 				.exec(function (error, place) {
 					callback(place);
 				});
