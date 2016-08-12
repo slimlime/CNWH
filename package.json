@@ -1,0 +1,15 @@
+{
+	"name": "nomad-houses",
+	"version": "1.0.0",
+	"description": "House prices/rent prices etc",
+	"main": "app.js",
+	"scripts": {
+		"test": "node app.js"
+	},
+	"author": "Tommi Sullivan, Nathan Sanchez, Jake Smith, Ida Immilae",
+	"license": "ISC",
+	"dependencies": {
+		"express": "latest",
+		"chalk": "latest"
+	}
+}
