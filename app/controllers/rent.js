@@ -19,14 +19,15 @@ module.exports = function (models, logger) {
 		},
 
 		findAllNum: function (cut, callback) {
-			models.Rent.find({}, function (error, place) {
+			models.Rent.find({})
+				.skip(cut * 30).limit(30)
+				.exec(function (error, place) {
+					callback(place);
+				});
+		},
 
-				if (error) {
-					logger.info('Post', error);
-				}
-				place.skip(cut * 30).limit(30);
-				callback(place);
-			})
+		findCheapest: function (cut, callback) {
+
 		},
 
 
@@ -37,7 +38,7 @@ module.exports = function (models, logger) {
 		/*
 		 * Get All Users
 		 */
-		getUsers: function (callback) {
+		getPlaces: function (callback) {
 			models.Rent.find({}, function (error, user) {
 				if (error) {
 					logger.info('Users', error);
