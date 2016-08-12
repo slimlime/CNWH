@@ -8,26 +8,26 @@ var csv = require('fast-csv');
 var content = '{"data": []}'
 var obj = JSON.parse(content);
 
-/*fs.createReadStream("rent.csv")
+fs.createReadStream("csv/rent.csv")
 	.pipe(csv())
 	.on("data", function (data) {
 		obj['data'].push({
 			"postCode": data[0].substr(3),
 			"avgInc": data[3],
 			"avgRent": data[4],
-			"avgMorgage": data[2]
+			"avgMortgage": data[2]
 		})
 	})
 	.on("end", function () {
 		console.log("done");
 		content = JSON.stringify(obj);
 		console.log(content);
-		fs.writeFile('data.json', content, (err) => {
+		fs.writeFile('data/events.json', content, (err) => {
 			if (err) throw err;
 			console.log('It\'s saved!');
 		});
 
-	});*/
+	});
 
 //server public files
 app.use(express.static(__dirname + '/public'));
