@@ -45,13 +45,13 @@ if (c.create) {
 			};
 			obj['data'].push(data);
 			controller.Rent.createPlace(data, function (place) {
-				console.log("place created");
+				//console.log("place created");
 			});
 		})
 		.on("end", function () {
 			console.log("done");
 			content = JSON.stringify(obj);
-			console.log(content);
+			//console.log(content);
 			fs.writeFile('data/events.json', content, (err) => {
 				if (err) throw err;
 				console.log('It\'s saved!');
