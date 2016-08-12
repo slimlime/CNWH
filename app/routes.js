@@ -20,4 +20,16 @@ module.exports = function (app, controller, fs) {
 		});
 	});
 
+	app.get('/data/cheapest/:cut', function (req, res) {
+		controller.Rent.findCheapest(req.params.cut, function (data) {
+			res.send(data);
+		});
+	});
+
+	app.get('/data/expensive/:cut', function (req, res) {
+		controller.Rent.findExp(req.params.cut, function (data) {
+			res.send(data);
+		});
+	});
+
 };
