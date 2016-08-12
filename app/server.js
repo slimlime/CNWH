@@ -7,7 +7,7 @@ module.exports = function (http, serverPort, chalk) {
 		var host = server.address().address;
 		var port = server.address().port;
 
-		console.log(chalk.bold.bgWhite.blue('\t\t *** Studdit *** \t\t\t'));
+		console.log(chalk.bold.bgWhite.blue('\t\t *** CNWH *** \t\t\t'));
 		console.log(chalk.italic.bgCyan.blue(' Server listening on: ') +
 			chalk.italic.bgCyan.black('\t host:' + host + ' port: ' + port + '\t\t'));
 	});
