@@ -1,3 +1,12 @@
+<div ng-if="postcode.avgRent == 0" class="alert alert-warning">
+			  <!-- you can add the class "alert-auto-close" and the alert notification will be closed in 5 seconds -->
+
+            <div class="container">
+                It's likely this data is from a postcode used for PO Boxes only because of the lack of data.    
+            </div>
+</div>
+
+
 <div ng-if="postcode == undefined" style="margin-top:125px; margin-bottom:125px;" class="text-center">
 
 <h2>Whoops...</h2>
