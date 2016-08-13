@@ -68,6 +68,10 @@ module.exports = function (app, controller, fs) {
 		});
 	});
 
+	app.get('*', function (req, res) {
+		res.send('Hi, I think you went to a wrong url there buddy', 404);
+	});
+
 
 
 
