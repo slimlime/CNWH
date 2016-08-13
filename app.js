@@ -10,6 +10,7 @@ var mongoose = require('mongoose');
 var logger = require('winston');
 var content = '{"data": []}'
 var obj = JSON.parse(content);
+var GoogleMapsAPI = require("googlemaps")
 
 var publicConfig = {
 	key: 'AIzaSyATlr8T7UkQhk0Y2oyiR416UZa7KU28F_Q',
