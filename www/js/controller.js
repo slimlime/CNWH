@@ -7,6 +7,9 @@ app.controller('dataCtrl', function($scope, $http, $route) {
     $http.get('/data/' + query + requestnum).then(function(response) {
         $scope.postcodes = response.data;
         requestnum++;
+        if (response.data.length < 29) {
+            $("#load-more").hide();
+        }
     });
 
     $('#load-more').click(function () {
