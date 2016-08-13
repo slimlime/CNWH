@@ -32,6 +32,41 @@ app.config(function($routeProvider) {
     controller: 'dataCtrl',
     query: 'popular/'
   })
+    .when("/act", {
+    templateUrl : "templates/home.htm",
+    controller: 'dataCtrl',
+    query: 'act/'
+  })
+  .when("/nsw", {
+    templateUrl : "templates/home.htm",
+    controller: 'dataCtrl',
+    query: 'nsw/'
+  })
+    .when("/vic", {
+    templateUrl : "templates/home.htm",
+    controller: 'dataCtrl',
+    query: 'vic/'
+  })
+  .when("/qld", {
+    templateUrl : "templates/home.htm",
+    controller: 'dataCtrl',
+    query: 'qld/'
+  })
+    .when("/tas", {
+    templateUrl : "templates/home.htm",
+    controller: 'dataCtrl',
+    query: 'tas/'
+  })
+    .when("/nt", {
+    templateUrl : "templates/home.htm",
+    controller: 'dataCtrl',
+    query: 'nt/'
+  })
+    .when("/wa", {
+    templateUrl : "templates/home.htm",
+    controller: 'dataCtrl',
+    query: 'wa/'
+  })
   .when("/postcode/:postcode", {
     templateUrl : "templates/postcode.htm",
     controller: 'dataCtrl',
