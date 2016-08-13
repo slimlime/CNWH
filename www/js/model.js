@@ -11,6 +11,14 @@ app.config(function($routeProvider) {
     templateUrl : "templates/home.htm",
     controller: 'homeCtrl'
   })
+  .when("/cheapest", {
+    templateUrl : "templates/home.htm",
+    controller: 'cheapestCtrl'
+  })
+  .when("/expensive", {
+    templateUrl : "templates/home.htm",
+    controller: 'expensiveCtrl'
+  })
   .when("/postcode/:postcode", {
     templateUrl : "templates/postcode.htm",
     controller: 'postcodeCtrl'
