@@ -39,6 +39,16 @@ module.exports = function (app, controller, fs) {
 			res.send(data);
 		});
 	});
+	app.get('/data/popular/:cut', function (req, res) {
+		controller.Rent.findMostPop(req.params.cut, function (data) {
+			res.send(data);
+		});
+	});
+	app.get('/data/unpopular/:cut', function (req, res) {
+		controller.Rent.findLeastPop(req.params.cut, function (data) {
+			res.send(data);
+		});
+	});
 
 	app.get('/data/postcode/:post', function (req, res) {
 		controller.Rent.findPost(req.params.post, function (data) {
