@@ -4,10 +4,10 @@ app.config(function($routeProvider) {
   $routeProvider
   .when("/", {
     templateUrl : "templates/home.htm",
-    controller: 'postcodeCtrl'
+    controller: 'homeCtrl'
   })
-  .when("/view/{postcode}", {
-    templateUrl : "templates/photos.htm",
-    controller: 'photoCtrl'
+  .when("/postcode/:postcode", {
+    templateUrl : "templates/postcode.htm",
+    controller: 'postcodeCtrl'
   })
 });

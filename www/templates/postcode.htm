@@ -1,4 +1,4 @@
-<div ng-repeat="postcode in postcodes" class="col-md-4">
+<div class="col-md-12">
 
 <div class="card card-background">
 <div class="image" style="background-image: url('/img/gold_coast.jpg'); background-size: cover; background-position: center center;">
@@ -8,10 +8,10 @@
     <div class="content">
     <h5 class="price">$ {{ postcode.avgInc }}
             <a href="#" class="pull-right">
-            <i class="fa fa-heart-o"></i>
+                <i class="fa fa-heart-o"></i>
             </a>
         </h5>
-    <a href="#/postcode/{{postcode.post}}"><br>
+    <a href="#"><br>
         <h4 class="title">{{ postcode.post }}</h4>
         <p>Suburb, Suburb, Suburb, Suburb </p>
     </a>
@@ -28,13 +28,4 @@
     </div>
 </div>
 </div>
-</div>
-
-
-<div class="row">
-    <div class="col-md-4 col-md-offset-4 text-center">
-        <div class="load-more">
-        <button class="btn btn-round btn-info btn-lg" id="load-more" data-rotation-color="azure">Load More</button>
-        </div>
-    </div>
 </div>
