@@ -7,23 +7,7 @@ app.controller('dataCtrl', function($scope, $http, $route) {
     $http.get('/data/' + query + requestnum).then(function(response) {
         $scope.postcodes = response.data;
         requestnum++;
-
-        // sendReq();
     });
-
-//     function sendReq (){
-//     var n = 0;
-//     if(n < $scope.postcodes.length) {
-//             $http.get('https://query.yahooapis.com/v1/public/yql?q=select%20item.condition.text%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22dallas%2C%20tx%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys')
-//             .then(function(response){
-                
-//                 console.log($scope.postcodes[n]);
-//                 $scope.postcodes[n].weather = response.data;
-//                 n++;
-//                 sendReq();
-//             });
-//         }
-// }
 
     $('#load-more').click(function () {
 
@@ -40,9 +24,26 @@ app.controller('dataCtrl', function($scope, $http, $route) {
 
 }).controller('postcodeCtrl', function($scope, $http, $routeParams) {
 
+    console.log('controller load');
+
     $http.get('/data/postcode/' + $routeParams.postcode).then(function(response) {  
         $scope.postcode = response.data;
         console.log(response.data);
     });
 
 });
+
+
+//     function sendReq (){
+//     var n = 0;
+//     if(n < $scope.postcodes.length) {
+//             $http.get('https://query.yahooapis.com/v1/public/yql?q=select%20item.condition.text%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22dallas%2C%20tx%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys')
+//             .then(function(response){
+                
+//                 console.log($scope.postcodes[n]);
+//                 $scope.postcodes[n].weather = response.data;
+//                 n++;
+//                 sendReq();
+//             });
+//         }
+// }

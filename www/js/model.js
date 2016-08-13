@@ -79,7 +79,6 @@ app.config(function($routeProvider) {
   })
   .when("/postcode/:postcode", {
     templateUrl : "templates/postcode.htm",
-    controller: 'dataCtrl',
-    query: 'popular/'
+    controller: 'postcodeCtrl',
   })
 });
