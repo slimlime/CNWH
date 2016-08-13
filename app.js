@@ -7,6 +7,7 @@ var fs = require('fs');
 var chalk = require('chalk');
 var csv = require('fast-csv');
 var mongoose = require('mongoose');
+
 var logger = require('winston');
 var content = '{"data": []}'
 var obj = JSON.parse(content);
@@ -50,7 +51,18 @@ if (c.create) {
 					"subs": [],
 					"avgAge": parseInt(data[3]),
 					"pop": parseInt(data[2]),
-					"state": ""
+					"state": "",
+					"totalM": parseInt(data[8]),
+					"totalF": parseInt(data[9]),
+					"indigenous": parseInt(data[10]),
+					"birthAU": parseInt(data[11]),
+					"birthOTH": parseInt(data[12]),
+					"engSpeak": parseInt(data[13]),
+					"othSpeak": parseInt(data[14]),
+					"noInternet": parseInt(data[15]),
+					"haveInternet": parseInt(data[16]),
+					"working": parseInt(data[17]),
+					"avgRooms": parseFloat(data[18])
 				};
 				obj['data'].push(data2);
 				controller.Rent.createPlace(data2, function (place) {

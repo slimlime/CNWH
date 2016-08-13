@@ -10,7 +10,7 @@ module.exports = function (models, logger) {
 		findPost: function (name, callback) {
 			models.Rent.findOne({
 				"post": name
-			}, " _id post avgRent avgInc avgMortgage closestCity subs avgAge pop state", function (error, post) {
+			}, " _id post avgRent avgInc avgMortgage closestCity subs avgAge pop state totalM totalF indigenous birthAU birthOTH engSpeak othSpeak noInternet haveInternet working avgRooms", function (error, post) {
 				if (error) {
 					logger.info('Post', error);
 				}
