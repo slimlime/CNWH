@@ -6,25 +6,21 @@
     <div class="filter"></div>
 </div>
     <div class="content">
-    <h5 class="price">$ {{ postcode.avgInc }}
-            <a href="#" class="pull-right">
-            <i class="fa fa-heart-o"></i>
-            </a>
+    <h5 class="price">${{ postcode.avgInc }}
+            <span class="pull-right">
+            ${{postcode.avgRent }}
+            </span>
         </h5>
+    <p class="details-home">Avg. Income <span class="pull-right">Avg. Rent</span></p>
     <a href="#/postcode/{{postcode.post}}"><br>
         <h4 class="title">{{ postcode.post }}</h4>
         <p>Suburb, Suburb, Suburb, Suburb </p>
     </a>
 </div>
 <div class="footer">
-    <div class="author">
-        <a href="#">
-            <img src="/img/default-avatar.png" alt="..." class="avatar">
-            <span>Alex</span>
-        </a>
-    </div>
+        <i class="fa fa-users"></i> 123
     <div class="stats pull-right">
-        <i class="fa fa-comment"></i>  253 Comments
+        253 <i class="fa fa-comment"></i>
     </div>
 </div>
 </div>

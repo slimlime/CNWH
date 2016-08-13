@@ -22,49 +22,64 @@
 </div>
 </div>
 
-<!--
+<div class="row">
 
-
-
-    SOCIAL SHARES SECTION
-
-
-
-    -->
-
-
-<div class="social-line">
-             <div class="container">
-                <div class="row">
-                     <div class="col-md-3">
-                        <h4 class="title">Share info for {{postcode.post}}!</h4>
-                    </div>
-                     <div class="col-md-2">
-                         <a href="" class="btn btn-round btn-fill btn-social btn-facebook">
-                             <i class="fa fa-facebook-square"></i> Share · 753
-                         </a>
-                     </div>
-                      <div class="col-md-2">
-                         <a href="" class="btn btn-round btn-fill btn-social btn-twitter">
-                             <i class="fa fa-twitter"></i> Tweet · 832
-                         </a>
-                     </div>
-                      <div class="col-md-2">
-                         <a href="" class="btn btn-round btn-fill btn-social btn-google">
-                             <i class="fa fa-google-plus-square"></i> Share · 131
-                         </a>
-                     </div>
-                     <div class="col-md-2">
-                         <a href="" class="btn btn-round btn-social  btn-fill btn-youtube">
-                             <i class="fa fa-pinterest"></i> Pin it · 323
-                         </a>
-                     </div>
+     <div class="col-md-3">
+           <div class="info">
+                <div class="icon icon-green">
+                    <i class="pe-7s-cash"></i>
                 </div>
-             </div>
-         </div>
-<hr>
 
-<div class="row"> 
+                <div class="description">
+                    <h3> ${{postcode.avgInc}} </h3>
+                    <p>Average Income</p>
+                </div>
+           </div>
+        </div>
+
+        <div class="col-md-3">
+           <div class="info">
+                <div class="icon icon-red">
+                    <i class="pe-7s-home"></i>
+                </div>
+
+                <div class="description">
+                    <h3> ${{postcode.avgMortgage}} </h3>
+                    <p>Monthly Mortgage Repayments</p>
+                </div>
+           </div>
+        </div>
+
+        <div class="col-md-3">
+           <div class="info">
+                <div class="icon icon-orange">
+                    <i class="pe-7s-user"></i>
+                </div>
+
+                <div class="description">
+                    <h3> 1,500 </h3>
+                    <p>Population in {{postcode.post}}</p>
+                </div>
+           </div>
+        </div>
+
+        <div class="col-md-3">
+           <div class="info">
+                <div class="icon icon-blue">
+                    <i class="pe-7s-sun"></i>
+                </div>
+
+                <div class="description">
+                    <h3> 32˚C </h3>
+                    <p>Weather in {{postcode.post}}</p>
+                </div>
+           </div>
+        </div>
+
+</div>
+
+
+<!--<div class="row"> 
 
 <div class="col-md-3">   
 <div class="card card-background">
@@ -86,7 +101,7 @@
                         </div>
 </div>
 
-</div>
+</div>-->
 
 <h4> Statistics about the postcode {{postcode.post}} </h4>
 
@@ -104,6 +119,48 @@
 </table>
 
 
+
+<!--
+
+
+
+    SOCIAL SHARES SECTION
+
+
+
+    -->
+
+<hr>
+<div class="social-line">
+             <div class="container">
+                <div class="row">
+                     <div class="col-md-3">
+                        <h4 class="title">Share info for {{postcode.post}}!</h4>
+                    </div>
+                     <div class="col-md-2">
+                         <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//sitename.com/#/postcode/{{postcode.post}}" class="btn btn-round btn-fill btn-social btn-facebook">
+                             <i class="fa fa-facebook-square"></i> Share · 753
+                         </a>
+                     </div>
+                      <div class="col-md-2">
+                         <a target="_blank" href="http://twitter.com/home?status=Find all the info you need for the Postcode {{postcode.post}} at SITENAME/postcode/{{postcode.post}}" class="btn btn-round btn-fill btn-social btn-twitter">
+                             <i class="fa fa-twitter"></i> Tweet · 832
+                         </a>
+                     </div>
+                      <div class="col-md-2">
+                         <a href="" class="btn btn-round btn-fill btn-social btn-google">
+                             <i class="fa fa-google-plus-square"></i> Share · 131
+                         </a>
+                     </div>
+                     <div class="col-md-2">
+                         <a href="" class="btn btn-round btn-social  btn-fill btn-youtube">
+                             <i class="fa fa-pinterest"></i> Pin it · 323
+                         </a>
+                     </div>
+                </div>
+             </div>
+         </div>
+<hr>
 
 <!-- 
     
