@@ -18,6 +18,13 @@ module.exports = function (models, logger) {
 			});
 		},
 
+		getPosts: function (callback) {
+			models.Rent.find("post", function (error, place) {
+				callback(place);
+			});
+
+		},
+
 		findAllNum: function (cut, callback) {
 			models.Rent.find({})
 				.skip(cut * 30).limit(30)

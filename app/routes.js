@@ -52,4 +52,10 @@ module.exports = function (app, controller, fs) {
 		});
 	});
 
+	app.get('/data/postcodes', function (req, res) {
+		controller.Rent.getPosts(function (data) {
+			res.send(data);
+		})
+	});
+
 };
