@@ -56,7 +56,7 @@
         </h5>
     <p class="details-home">Avg. Income <span class="pull-right">Avg. Rent</span></p>
     <br>
-        <h4 class="title">{{ postcode.post }}<span ng-if="postcode.state != ''">, {{postcode.state}}</span></h4>
+        <h4 class="title">{{ postcode.post }}</h4>
         <p ng-if="postcode.subs.length > 0">
             <span ng-repeat="suburb in postcode.subs | limitTo:5"> 
                 {{suburb}}<span ng-if="$index != postcode.subs.length-1 && $index != 4">,</span><span ng-if="$index == 4">...</span> 
@@ -66,7 +66,7 @@
 <div class="footer">
         <i class="fa fa-users"></i> {{postcode.pop | number:0}}
     <div class="stats pull-right">
-        31˚C <i class="fa fa-cloud"></i>
+       <span ng-if="postcode.state != ''"> {{postcode.state}} <i class="fa fa-map-marker"></i> </span>
     </div>
 </div>
 </div>

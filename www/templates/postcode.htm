@@ -48,8 +48,8 @@
                 </div>
 
                 <div class="description">
-                    <h3> ${{postcode.avgMortgage | number:0}} </h3>
-                    <p>Monthly mortgage repayments</p>
+                    <h3> ${{postcode.avgRent | number:0}} </h3>
+                    <p>Weekly Rent</p>
                 </div>
            </div>
         </div>
@@ -70,12 +70,12 @@
         <div class="col-md-3">
            <div class="info">
                 <div class="icon icon-orange">
-                    <i class="pe-7s-sun"></i>
+                    <i class="pe-7s-graph2"></i>
                 </div>
 
                 <div class="description">
-                    <h3> 32˚C </h3>
-                    <p>Weather in {{postcode.post}}</p>
+                    <h3> ${{postcode.avgMortgage | number:0}} </h3>
+                    <p>Monthly mortgage repayments</p>
                 </div>
            </div>
         </div>
@@ -83,29 +83,9 @@
 </div>
 
 
-<!--<div class="row"> 
+<div class="row">
 
-<div class="col-md-3">   
-<div class="card card-background">
-                            <div class="image" style="background-image: url('/img/thumb.jpg'); background-size: cover; background-position: center center;">
-                                <img src="img/thumb.jpg" alt="..." style="display: none;">
-                                <div class="filter filter-orange"></div>
-                            </div>
-                             <div class="content text-center">
-                                <a href="#"><br>
-                                    <h1 class="title"> 37°C </h1>
-                                    <h5>Very Hot</h5>
-                                </a>
-                            </div>
-                            <div class="footer">
-                               <div class="stats">
-                                    <i class="fa fa-map-marker"></i>  New York, USA
-                               </div>
-                            </div>
-                        </div>
-</div>
-
-</div>-->
+<div class="col-md-9">
 
 <h4> All about the postcode {{postcode.post}}, {{postcode.state}} </h4>
 
@@ -181,6 +161,35 @@
     </tr>
 
 </table>
+
+</div>
+
+
+<div class="col-md-3">   
+<div class="card card-background">
+                            <div class="image" style="background-image: url('/img/thumb.jpg'); background-size: cover; background-position: center center;">
+                                <img src="img/thumb.jpg" alt="..." style="display: none;">
+                                <div class="filter filter-blue"></div>
+                            </div>
+                             <div class="content text-center">
+                                <a href="#"><br>
+                                    <h1 class="title"> {{postcode.weather.item.condition.temp}}˚ {{postcode.weather.units.temperature}}</h1>
+                                    <h5>{{postcode.weather.item.condition.text}}</h5>
+                                </a>
+                            </div>
+                            <div class="footer">
+                               <div class="stats">
+                                    <i class="fa fa-map-marker"></i>  {{postcode.weather.location.city }}, {{postcode.weather.location.region }}, {{postcode.weather.location.country }}
+                               </div>
+                            </div>
+                        </div>
+</div>
+
+</div>
+
+
+
+
 
 <hr>
 <div class="social-line">
