@@ -43,13 +43,13 @@ if (c.create) {
 				//console.log(data);
 				var data2 = {
 					"post": data[0].substr(3),
-					"avgInc": data[4],
-					"avgRent": data[6],
-					"avgMortgage": data[7],
+					"avgInc": parseInt(data[4]),
+					"avgRent": parseInt(data[6]),
+					"avgMortgage": parseInt(data[7]),
 					"closestCity": "",
 					"subs": [],
-					"avgAge": data[3],
-					"pop": data[2]
+					"avgAge": parseInt(data[3]),
+					"pop": parseInt(data[2])
 				};
 				obj['data'].push(data2);
 				controller.Rent.createPlace(data2, function (place) {

@@ -6,13 +6,13 @@ module.exports = function (mongoose, schemas) {
 
 	schemas['Rent'] = mongoose.Schema({
 		post: String,
-		avgRent: String,
-		avgInc: String,
-		avgMortgage: String,
+		avgRent: Number,
+		avgInc: Number,
+		avgMortgage: Number,
 		closestCity: String,
 		subs: [String],
-		avgAge: String,
-		pop: String
+		avgAge: Number,
+		pop: Number
 	});
 	return mongoose.model('Rent', schemas.Rent);
 };
