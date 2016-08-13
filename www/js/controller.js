@@ -7,13 +7,6 @@ app.controller('homeCtrl', function($scope, $http) {
         requestnum++;
     });
 
-    var position = $("#load-more").offset().top
-     var scllwidth = $(window).scrollTop() + $(window).height()
-      if ( scllwidth > position) {
-            $("#load-more").click();
-            console.log('scroll to bottom');
-        }
-
 // $('#load-more').morphingButton();
 
 // $('#load-more').morphingButton({
@@ -36,11 +29,9 @@ $('#load-more').click(function () {
 
 });
 
-}).controller('postcodeCtrl', function($scope, $http, $stateParams) {
+}).controller('postcodeCtrl', function($scope, $http, $routeParams) {
 
-    console.log($stateParams);
-
-    $http.get('/data/' + $stateParams.postcode).then(function(response) {
+    $http.get('/data/postcode/' + $routeParams.postcode).then(function(response) {
         $scope.postcode = response.data;
     });
 
