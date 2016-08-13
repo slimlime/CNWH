@@ -60,7 +60,7 @@
                             <a href="javascript:void(0);" data-toggle="search" class="hidden-xs"><i class="fa fa-search"></i></a>
                         </li>
                       </ul>
-                       <form class="navbar-form navbar-left navbar-search-form" role="search">
+                       <form id="nav-form" class="navbar-form navbar-left navbar-search-form" role="search" ng-submit="searchForm()" >
                          <div class="form-group">
                               <input type="text" id="search" value="" class="form-control" placeholder="Enter a Postcode...">
                          </div>

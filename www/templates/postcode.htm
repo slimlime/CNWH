@@ -33,8 +33,8 @@
                 </div>
 
                 <div class="description">
-                    <h3> ${{postcode.avgInc}} </h3>
-                    <p>Average Income</p>
+                    <h3> ${{postcode.avgInc | number:0}} </h3>
+                    <p>Average weekly income</p>
                 </div>
            </div>
         </div>
@@ -46,8 +46,8 @@
                 </div>
 
                 <div class="description">
-                    <h3> ${{postcode.avgMortgage}} </h3>
-                    <p>Monthly Mortgage Repayments</p>
+                    <h3> ${{postcode.avgMortgage | number:0}} </h3>
+                    <p>Monthly mortgage repayments</p>
                 </div>
            </div>
         </div>
@@ -59,8 +59,8 @@
                 </div>
 
                 <div class="description">
-                    <h3> 1,500 </h3>
-                    <p>Population in {{postcode.post}}</p>
+                    <h3> {{postcode.pop | number:0}} </h3>
+                    <p>Population in postcode {{postcode.post}} </p>
                 </div>
            </div>
         </div>
@@ -109,13 +109,25 @@
 
 <table class="table table-striped">
     <tr>
-    <td>Average Income</td> <td>${{postcode.avgInc}} per week</td>
+    <td>Average Income</td> <td>${{postcode.avgInc | number:0}} per week</td>
     </tr>
     <tr>
-    <td>Average Mortgage Repayment</td> <td>${{postcode.avgMortgage}} per month</td>
+    <td>Average Mortgage Repayment</td> <td>${{postcode.avgMortgage | number:0}} per month</td>
     </tr>
     <tr>
-    <td>Average Rent</td> <td>${{postcode.avgRent}} per week</td>
+    <td>Average Rent</td> <td>${{postcode.avgRent | number:0}} per week</td>
+    </tr>
+
+    <tr>
+    <td>Average Age</td> <td>${{postcode.avgAge }} </td>
+    </tr>
+
+    <tr>
+    <td>Population</td> <td>{{postcode.pop | number:0}} people</td>
+    </tr>
+
+    <tr>
+    <td>Closest City</td> <td>{{postcode.closestCity }} </td>
     </tr>
 
 </table>
@@ -132,110 +144,26 @@
 
     -->
 
-<hr>
-<div class="social-line">
-             <div class="container">
-                <div class="row">
-                     <div class="col-md-3">
-                        <h4 class="title">Share info for {{postcode.post}}!</h4>
-                    </div>
-                     <div class="col-md-2">
-                         <a target="new" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//sitename.com/#/postcode/{{postcode.post}}" class="btn btn-round btn-fill btn-social btn-facebook">
-                             <i class="fa fa-facebook-square"></i> Share · 753
-                         </a>
-                     </div>
-                      <div class="col-md-2">
-                         <a target="_blank" href="http://twitter.com/home?status=Find all the info you need for the Postcode {{postcode.post}} at SITENAME/postcode/{{postcode.post}}" class="btn btn-round btn-fill btn-social btn-twitter">
-                             <i class="fa fa-twitter"></i> Tweet · 832
-                         </a>
-                     </div>
-                      <div class="col-md-2">
-                         <a href="" class="btn btn-round btn-fill btn-social btn-google">
-                             <i class="fa fa-google-plus-square"></i> Share · 131
-                         </a>
-                     </div>
-                     <div class="col-md-2">
-                         <a href="" class="btn btn-round btn-social  btn-fill btn-youtube">
-                             <i class="fa fa-pinterest"></i> Pin it · 323
-                         </a>
-                     </div>
-                </div>
-             </div>
-         </div>
-<hr>
-
-<!-- 
+<!-- -->
     
-    
-    COMMENTS SECTION 
-    
-    
--->
 
-<div class="row">
-<div class="col-md-6 col-md-offset-3">
-<div class="media-area media-area-small">
-<h3 class="text-center">10 Comments</h3>
-<div class="media">
-        <a class="pull-left" href="#">
-        <div class="avatar">
-                <img class="media-object" src="img/default-avatar.png" alt="...">
-        </div>
-        </a>
-        <div class="media-body">
-        <h4 class="media-heading">Creative Tim</h4>
-        <h6 class="pull-right text-muted">Sep 11, 11:53 AM</h6>
+    <div id="disqus_thread"></div>
+<script>
 
-        <p>Hello guys, nice to have you on the platform! There will be a lot of great stuff coming soon. We will keep you posted for the latest news.</p>
-        <p> Don't forget, You're Awesome!</p>
-
-        </div>
-</div> <!-- end media -->
-
-
-<div class="pagination-area">
-    <ul class="pagination pagination-no-border">
-            <!--   color-classes: "pagination-blue", "pagination-azure", "pagination-orange", "pagination-red", "pagination-green", special-classes: "pagination-no-border"  -->
-            <li><a href="#">«</a></li>
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">»</a></li>
-        </ul>
-</div>
-
-<h3 class="text-center">Post your comment</h3>
-<div class="media media-post">
-    <form class="form">
-    <a class="pull-left author" href="#">
-        <div class="avatar">
-                <img class="media-object" src="img/default-avatar.png" alt="...">
-        </div>
-    </a>
-    <div class="media-body">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Your Name">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Your email">
-                </div>
-            </div>
-        </div>
-        <textarea class="form-control" placeholder="Write some nice stuff or nothing..." rows="6" style="margin-top: 0px; margin-bottom: 10px; height: 151px;"></textarea>
-        <div class="media-footer">
-            <a href="#" class="btn btn-info btn-fill pull-right">Post Comment</a>
-        </div>
-    </div><!-- end media-body -->
-    </form>
-</div> <!-- end media-post -->
-
-</div>
-</div>
-</div>
-    
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+/*
+var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//cnwh.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
