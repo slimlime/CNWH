@@ -45,7 +45,7 @@
 <div class="card card-background">
     <a href="#/postcode/{{postcode.post}}">
 <div class="image" style="background-image: url('/img/gold_coast.jpg'); background-size: cover; background-position: center center;">
-    <img src="assets/img/thumb.jpg" alt="..." style="display: none;">
+    <img src="img/thumb.jpg" alt="..." style="display: none;">
     <div class="filter"></div>
 </div>
     <div class="content">
@@ -56,7 +56,7 @@
         </h5>
     <p class="details-home">Avg. Income <span class="pull-right">Avg. Rent</span></p>
     <br>
-        <h4 class="title">{{ postcode.post }}</h4>
+        <h4 class="title">{{ postcode.post }}<span ng-if="postcode.state != ''">, {{postcode.state}}</span></h4>
         <p ng-if="postcode.subs.length > 0">
             <span ng-repeat="suburb in postcode.subs | limitTo:5"> 
                 {{suburb}}<span ng-if="$index != postcode.subs.length-1 && $index != 4">,</span><span ng-if="$index == 4">...</span> 

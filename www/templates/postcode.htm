@@ -1,8 +1,10 @@
-<div class="">
+<div ng-if="postcode == undefined" style="margin-top:125px; margin-bottom:125px;" class="text-center">
 
-
+<h2>Whoops...</h2>
+<p>We couldn't find what you're looking for.</p>
 
 </div>
+<div ng-if="postcode != undefined">
 
 <div class="row">
 <div class="col-md-12">
@@ -105,7 +107,7 @@
 
 </div>-->
 
-<h4> Statistics about the postcode {{postcode.post}} </h4>
+<h4> All about the postcode {{postcode.post}}, {{postcode.state}} </h4>
 
 <table class="table table-striped">
     <tr>
@@ -136,6 +138,37 @@
 
 </table>
 
+<hr>
+<div class="social-line">
+             <div class="container">
+                <div class="row">
+                     <div class="col-md-3">
+                        <h4 class="title">Share info for {{postcode.post}}!</h4>
+                    </div>
+                     <div class="col-md-2">
+                         <a target="new" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//sitename.com/#/postcode/{{postcode.post}}" class="btn btn-round btn-fill btn-social btn-facebook">
+                             <i class="fa fa-facebook-square"></i> Share · 753
+                         </a>
+                     </div>
+                      <div class="col-md-2">
+                         <a target="_blank" href="http://twitter.com/home?status=Find all the info you need for the Postcode {{postcode.post}} at SITENAME/postcode/{{postcode.post}}" class="btn btn-round btn-fill btn-social btn-twitter">
+                             <i class="fa fa-twitter"></i> Tweet · 832
+                         </a>
+                     </div>
+                      <div class="col-md-2">
+                         <a href="" class="btn btn-round btn-fill btn-social btn-google">
+                             <i class="fa fa-google-plus-square"></i> Share · 131
+                         </a>
+                     </div>
+                     <div class="col-md-2">
+                         <a href="" class="btn btn-round btn-social  btn-fill btn-youtube">
+                             <i class="fa fa-pinterest"></i> Pin it · 323
+                         </a>
+                     </div>
+                </div>
+             </div>
+         </div>
+<hr>
 
 
 <!--
@@ -171,3 +204,5 @@ var disqus_config = function () {
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
