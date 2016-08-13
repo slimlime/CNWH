@@ -30,7 +30,17 @@ app.config(function($routeProvider) {
   .when("/unpopular", {
     templateUrl : "templates/home.htm",
     controller: 'dataCtrl',
-    query: 'popular/'
+    query: 'unpopular/'
+  })
+    .when("/highest-paid", {
+    templateUrl : "templates/home.htm",
+    controller: 'dataCtrl',
+    query: 'mostInc/'
+  })
+    .when("/lowest-paid", {
+    templateUrl : "templates/home.htm",
+    controller: 'dataCtrl',
+    query: 'leastInc/'
   })
     .when("/act", {
     templateUrl : "templates/home.htm",
