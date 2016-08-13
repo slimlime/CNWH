@@ -11,17 +11,18 @@ var logger = require('winston');
 var content = '{"data": []}'
 var obj = JSON.parse(content);
 var GoogleMapsAPI = require("googlemaps")
+var fill = [];
 
 var publicConfig = {
-	key: 'AIzaSyATlr8T7UkQhk0Y2oyiR416UZa7KU28F_Q',
+	key: '',
 	stagger_time: 1000, // for elevationPath
 	encode_polylines: false,
 	secure: true
 };
-var gmAPI = new GoogleMapsAPI(publicConfig);
+//var gmAPI = new GoogleMapsAPI(publicConfig);
 
-var geocodeParams = {
-	"address": "ashmore, QLD",
+/*var geocodeParams = {
+	"address": "4215",
 	"components": "components=country:GB",
 	"bounds": "55,-1|54,1",
 	"language": "en",
@@ -38,9 +39,9 @@ gmAPI.geocode(geocodeParams, function (err, result) {
 		"location_type": "APPROXIMATE"
 	};
 	gmAPI.reverseGeocode(reverseGeocodeParams, function (err, result) {
-		console.log(result.results[0].address_components);
+		console.log(result.results[0].postcode_localities);
 	});
-});
+})*/
 
 
 
@@ -68,30 +69,81 @@ if (c.create) {
 		fs.createReadStream("csv/rent.csv")
 			.pipe(csv())
 			.on("data", function (data) {
-				var data = {
+				//obj['data'].push(data);
+				fill.push({
 					"post": data[0].substr(3),
 					"avgInc": data[3],
 					"avgRent": data[4],
-					"avgMortgage": data[2]
-				};
-				obj['data'].push(data);
-				controller.Rent.createPlace(data, function (place) {
-					//console.log("place created");
+					"avgMortgage": data[2],
+					"closestCity": "",
+					"subs": []
 				});
+				//console.log("hey");
+
+
 			})
 			.on("end", function () {
 				console.log("done");
-				content = JSON.stringify(obj);
+				//content = JSON.stringify(obj);
+				console.log(fill.length);
+
 				//console.log(content);
-				fs.writeFile('data/events.json', content, (err) => {
+				/*fs.writeFile('data/events.json', content, (err) => {
 					if (err) throw err;
 					console.log('It\'s saved!');
-				});
+				});*/
+				var i = 0;
+
+				function go() {
+					console.log("finished one index: " + i);
+					//srPerformGeocode("TD Tower, 55 King Street West, Toronto, ON, Canada, M5K 1A2");
+					if (i < fill.length) {
+						var geocodeParams = {
+							"address": fill[i].post,
+							"components": "components=country:AU",
+							"bounds": "55,-1|54,1",
+							"language": "en",
+							region: "au"
+						};
+
+						gmAPI.geocode(geocodeParams, function (err, result) {
+
+							console.log(result);
+							//console.log(result.results[0].geometry.location);
+							var latlng = result.results[0].geometry.location.lat + "," + result.results[0].geometry.location.lng;
+							var reverseGeocodeParams = {
+								"latlng": latlng,
+								"result_type": "postal_code",
+								"language": "en",
+								"location_type": "APPROXIMATE"
+							};
+							gmAPI.reverseGeocode(reverseGeocodeParams, function (err, result) {
+								console.log("hi");
+								console.log(result);
+								console.log(i);
+								if (typeof result.results[0] != "undefined") {
+									fill[i].closestCity = result.results[0].address_components[2].short_name;
+									fill[i].subs = result.results[0].postcode_localities;
+								}
+								controller.Rent.createPlace(fill[i], function (place) {
+									console.log("place created");
+									//i++;
+								});
+							});
+						});
+						i++;
+						setTimeout(go, 100);
+					}
+				}
+				go();
 
 			});
 	});
 
 }
+
+
+
 
 //route for files etc
 require('./app/routes.js')(app, controller, fs);
