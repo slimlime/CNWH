@@ -1,6 +1,27 @@
+
+<div class="row">
+    <div class="col-md-12">
+
+<select name="huge" class="selectpicker" data-style="btn-info btn-fill btn-block">
+        <option disabled selected> Sort By</option>
+        <option value="1">Price (Low to High) </option>
+        <option value="1">Price (High to Low)</option>
+        <option value="1">Population (High to Low)</option>
+        <option value="1">Population (Low to Low)</option>
+    </select>
+
+    <hr>
+
+    </div>
+
+</div>
+
+<div class="row">
+
 <div ng-repeat="postcode in postcodes" class="col-md-4">
 
 <div class="card card-background">
+    <a href="#/postcode/{{postcode.post}}">
 <div class="image" style="background-image: url('/img/gold_coast.jpg'); background-size: cover; background-position: center center;">
     <img src="assets/img/thumb.jpg" alt="..." style="display: none;">
     <div class="filter"></div>
@@ -12,18 +33,22 @@
             </span>
         </h5>
     <p class="details-home">Avg. Income <span class="pull-right">Avg. Rent</span></p>
-    <a href="#/postcode/{{postcode.post}}"><br>
+    <br>
         <h4 class="title">{{ postcode.post }}</h4>
-        <p>Suburb, Suburb, Suburb, Suburb </p>
-    </a>
+        <p ng-if="postcode.subs.length > 0">
+            <span ng-repeat="suburb in postcode.subs | limitTo:5"> 
+                {{suburb}}<span ng-if="$index != postcode.subs.length-1 && $index != 4">,</span><span ng-if="$index == 4">...</span> 
+            </span>
+        </p>
 </div>
 <div class="footer">
-        <i class="fa fa-users"></i> 123
+        <i class="fa fa-users"></i> {{postcode.pop | number:0}}
     <div class="stats pull-right">
-        253 <i class="fa fa-comment"></i>
+        31˚C <i class="fa fa-cloud"></i>
     </div>
 </div>
 </div>
+</a>
 </div>
 
 
@@ -33,4 +58,6 @@
         <button class="btn btn-round btn-info btn-lg" id="load-more" data-rotation-color="azure">Load More</button>
         </div>
     </div>
+</div>
+
 </div>
