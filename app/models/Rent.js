@@ -13,7 +13,18 @@ module.exports = function (mongoose, schemas) {
 		subs: [String],
 		avgAge: Number,
 		pop: Number,
-		state: String
+		state: String,
+		totalM: Number,
+		totalF: Number,
+		indigenous: Number,
+		birthAU: Number,
+		birthOTH: Number,
+		engSpeak: Number,
+		othSpeak: Number,
+		noInternet: Number,
+		haveInternet: Number,
+		working: Number,
+		avgRooms: Number
 	});
 	return mongoose.model('Rent', schemas.Rent);
 };

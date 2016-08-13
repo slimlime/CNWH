@@ -92,7 +92,7 @@ module.exports = function (app, controller, fs) {
 		})
 	});
 
-	app.get('/data/qwa/:cut', function (req, res) {
+	app.get('/data/wa/:cut', function (req, res) {
 		controller.Rent.findState("WA", req.params.cut, function (data) {
 			res.send(data);
 		})
