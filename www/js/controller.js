@@ -31,8 +31,9 @@ $('#load-more').click(function () {
 
 }).controller('postcodeCtrl', function($scope, $http, $routeParams) {
 
-    $http.get('/data/postcode/' + $routeParams.postcode).then(function(response) {
+    $http.get('/data/postcode/' + $routeParams.postcode).then(function(response) {  
         $scope.postcode = response.data;
+        console.log(response.data);
     });
 
 });

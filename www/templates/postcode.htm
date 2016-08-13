@@ -15,7 +15,9 @@
     <div class="content">
    <a class="text-center">
         <h1 class="title" style="margin-top: 190px;">{{ postcode.post }}</h1>
-        <p>Suburb, Suburb, Suburb, Suburb </p>
+        <p ng-if="postcode.subs.length > 0">
+            <span ng-repeat="suburb in postcode.subs"> {{suburb}}<span ng-if="$index != postcode.subs.length-1">,</span> </span>
+        </p>
     </a>
 </div>
 </div>
@@ -138,7 +140,7 @@
                         <h4 class="title">Share info for {{postcode.post}}!</h4>
                     </div>
                      <div class="col-md-2">
-                         <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//sitename.com/#/postcode/{{postcode.post}}" class="btn btn-round btn-fill btn-social btn-facebook">
+                         <a target="new" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//sitename.com/#/postcode/{{postcode.post}}" class="btn btn-round btn-fill btn-social btn-facebook">
                              <i class="fa fa-facebook-square"></i> Share · 753
                          </a>
                      </div>

@@ -14,7 +14,11 @@
     <p class="details-home">Avg. Income <span class="pull-right">Avg. Rent</span></p>
     <a href="#/postcode/{{postcode.post}}"><br>
         <h4 class="title">{{ postcode.post }}</h4>
-        <p>Suburb, Suburb, Suburb, Suburb </p>
+        <p ng-if="postcode.subs.length > 0">
+            <span ng-repeat="suburb in postcode.subs | limitTo:5"> 
+                {{suburb}}<span ng-if="$index != postcode.subs.length-1 && $index != 4">,</span><span ng-if="$index == 4">...</span> 
+            </span>
+        </p>
     </a>
 </div>
 <div class="footer">
