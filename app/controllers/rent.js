@@ -52,6 +52,25 @@ module.exports = function (models, logger) {
 					callback(place);
 				});
 		},
+		findMostPop: function (cut, callback) {
+			models.Rent.find({})
+				.sort({
+					"pop": 1
+				}).skip(cut * 30).limit(30)
+				.exec(function (error, place) {
+					callback(place);
+				});
+		},
+		findLeastPop: function (cut, callback) {
+			models.Rent.find({})
+				.sort({
+					"pop": -1
+				}).skip(cut * 30).limit(30)
+				.exec(function (error, place) {
+					callback(place);
+				});
+		},
+
 		findMostPaid: function (cut, callback) {
 			models.Rent.find({})
 				.sort({
