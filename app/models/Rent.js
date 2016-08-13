@@ -12,7 +12,8 @@ module.exports = function (mongoose, schemas) {
 		closestCity: String,
 		subs: [String],
 		avgAge: Number,
-		pop: Number
+		pop: Number,
+		state: String
 	});
 	return mongoose.model('Rent', schemas.Rent);
 };

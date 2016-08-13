@@ -10,12 +10,21 @@ module.exports = function (models, logger) {
 		findPost: function (name, callback) {
 			models.Rent.findOne({
 				"post": name
-			}, " _id post avgRent avgInc avgMortgage closestCity subs avgAge pop", function (error, post) {
+			}, " _id post avgRent avgInc avgMortgage closestCity subs avgAge pop state", function (error, post) {
 				if (error) {
 					logger.info('Post', error);
 				}
 				callback(post);
 			});
+		},
+		findState: function (name, cut, callback) {
+			models.Rent.find({
+					state: name
+				})
+				.skip(cut * 30).limit(30)
+				.exec(function (error, place) {
+					callback(place);
+				});
 		},
 
 		getPosts: function (callback) {
@@ -55,7 +64,7 @@ module.exports = function (models, logger) {
 		findMostPop: function (cut, callback) {
 			models.Rent.find({})
 				.sort({
-					"pop": 1
+					"pop": -1
 				}).skip(cut * 30).limit(30)
 				.exec(function (error, place) {
 					callback(place);
@@ -64,7 +73,7 @@ module.exports = function (models, logger) {
 		findLeastPop: function (cut, callback) {
 			models.Rent.find({})
 				.sort({
-					"pop": -1
+					"pop": 1
 				}).skip(cut * 30).limit(30)
 				.exec(function (error, place) {
 					callback(place);

@@ -62,6 +62,48 @@ module.exports = function (app, controller, fs) {
 		})
 	});
 
+	app.get('/data/qld/:cut', function (req, res) {
+		controller.Rent.findState("QLD", req.params.cut, function (data) {
+			res.send(data);
+		})
+	});
+
+	app.get('/data/nsw/:cut', function (req, res) {
+		controller.Rent.findState("NSW", req.params.cut, function (data) {
+			res.send(data);
+		})
+	});
+
+	app.get('/data/vic/:cut', function (req, res) {
+		controller.Rent.findState("VIC", req.params.cut, function (data) {
+			res.send(data);
+		})
+	});
+
+	app.get('/data/act/:cut', function (req, res) {
+		controller.Rent.findState("ACT", req.params.cut, function (data) {
+			res.send(data);
+		})
+	});
+
+	app.get('/data/nt/:cut', function (req, res) {
+		controller.Rent.findState("NT", req.params.cut, function (data) {
+			res.send(data);
+		})
+	});
+
+	app.get('/data/qwa/:cut', function (req, res) {
+		controller.Rent.findState("WA", req.params.cut, function (data) {
+			res.send(data);
+		})
+	});
+
+	app.get('/data/tas/:cut', function (req, res) {
+		controller.Rent.findState("TAS", req.params.cut, function (data) {
+			res.send(data);
+		})
+	});
+
 	app.get('/data/:cut', function (req, res) {
 		controller.Rent.findAllNum(req.params.cut, function (data) {
 			res.send(data);
@@ -71,6 +113,11 @@ module.exports = function (app, controller, fs) {
 	app.get('*', function (req, res) {
 		res.send('Hi, I think you went to a wrong url there buddy', 404);
 	});
+
+	app.get('/data/*', function (req, res) {
+		res.send('Hi, I think you went to a wrong url there buddy', 404);
+	});
+
 
 
 

@@ -49,7 +49,8 @@ if (c.create) {
 					"closestCity": "",
 					"subs": [],
 					"avgAge": parseInt(data[3]),
-					"pop": parseInt(data[2])
+					"pop": parseInt(data[2]),
+					"state": ""
 				};
 				obj['data'].push(data2);
 				controller.Rent.createPlace(data2, function (place) {
@@ -86,8 +87,11 @@ function addExtras(mapData) {
 							//console.log(data[i].closestCity, 0);
 							if (mapData[x].results[0].address_components[temp].types[0] == "locality" || mapData[x].results[0].address_components[temp].types[0] == "political")
 								data[i].closestCity = mapData[x].results[0].address_components[temp].short_name;
+							if (mapData[x].results[0].address_components[temp].types[0] == "administrative_area_level_2")
+								data[i].closestCity = mapData[x].results[0].address_components[temp].short_name;
 							//console.log(data[i].closestCity, 1);
-
+							if (mapData[x].results[0].address_components[temp].types[0] == "administrative_area_level_1")
+								data[i].state = mapData[x].results[0].address_components[temp].short_name
 						}
 						if (typeof mapData[x].results[0].postcode_localities != "undefined")
 							data[i].subs = mapData[x].results[0].postcode_localities;
