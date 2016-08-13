@@ -12,7 +12,7 @@ app.controller('dataCtrl', function($scope, $http, $route) {
     $('#load-more').click(function () {
 
         $("#load-more").text('Loading...');
-        $http.get('/data/' + requestnum).then(function(response) {
+        $http.get('/data/' + query + requestnum).then(function(response) {
             for (var i = 0; i < response.data.length; i++) {
                 $scope.postcodes.push(response.data[i]);
             }
