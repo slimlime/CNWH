@@ -10,7 +10,9 @@ module.exports = function (mongoose, schemas) {
 		avgInc: String,
 		avgMortgage: String,
 		closestCity: String,
-		subs: [String]
+		subs: [String],
+		avgAge: String,
+		pop: String
 	});
 	return mongoose.model('Rent', schemas.Rent);
 };

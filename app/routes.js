@@ -46,16 +46,18 @@ module.exports = function (app, controller, fs) {
 		});
 	});
 
+	app.get('/data/test', function (req, res) {
+		controller.Rent.getPosts(function (data) {
+			res.send(data);
+		})
+	});
+
 	app.get('/data/:cut', function (req, res) {
 		controller.Rent.findAllNum(req.params.cut, function (data) {
 			res.send(data);
 		});
 	});
 
-	app.get('/data/postcodes', function (req, res) {
-		controller.Rent.getPosts(function (data) {
-			res.send(data);
-		})
-	});
+
 
 };

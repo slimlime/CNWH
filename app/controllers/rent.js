@@ -10,7 +10,7 @@ module.exports = function (models, logger) {
 		findPost: function (name, callback) {
 			models.Rent.findOne({
 				"post": name
-			}, " _id post avgRent avgInc avgMortgage closestCity subs", function (error, post) {
+			}, " _id post avgRent avgInc avgMortgage closestCity subs avgAge pop", function (error, post) {
 				if (error) {
 					logger.info('Post', error);
 				}
@@ -19,7 +19,7 @@ module.exports = function (models, logger) {
 		},
 
 		getPosts: function (callback) {
-			models.Rent.find("post", function (error, place) {
+			models.Rent.find({}, "post", function (error, place) {
 				callback(place);
 			});
 
