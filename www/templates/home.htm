@@ -21,6 +21,7 @@
 <div ng-repeat="postcode in postcodes" class="col-md-4">
 
 <div class="card card-background">
+    <a href="#/postcode/{{postcode.post}}">
 <div class="image" style="background-image: url('/img/gold_coast.jpg'); background-size: cover; background-position: center center;">
     <img src="assets/img/thumb.jpg" alt="..." style="display: none;">
     <div class="filter"></div>
@@ -32,14 +33,13 @@
             </span>
         </h5>
     <p class="details-home">Avg. Income <span class="pull-right">Avg. Rent</span></p>
-    <a href="#/postcode/{{postcode.post}}"><br>
+    <br>
         <h4 class="title">{{ postcode.post }}</h4>
         <p ng-if="postcode.subs.length > 0">
             <span ng-repeat="suburb in postcode.subs | limitTo:5"> 
                 {{suburb}}<span ng-if="$index != postcode.subs.length-1 && $index != 4">,</span><span ng-if="$index == 4">...</span> 
             </span>
         </p>
-    </a>
 </div>
 <div class="footer">
         <i class="fa fa-users"></i> {{postcode.pop | number:0}}
@@ -48,6 +48,7 @@
     </div>
 </div>
 </div>
+</a>
 </div>
 
 
