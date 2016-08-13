@@ -19,31 +19,12 @@ app.controller('homeCtrl', function($scope, $http) {
 
     });
 
-}).controller('cheapestCtrl', function($scope, $http) {
+}).controller('dataCtrl', function($scope, $http, $route) {
+
+    query = $route.current.query;
     
     requestnum = 0;
-    $http.get('/data/cheapest' + requestnum).then(function(response) {
-        $scope.postcodes = response.data;
-        requestnum++;
-    });
-
-    $('#load-more').click(function () {
-
-        $("#load-more").text('Loading...');
-        $http.get('/data/' + requestnum).then(function(response) {
-            for (var i = 0; i < response.data.length; i++) {
-                $scope.postcodes.push(response.data[i]);
-            }
-            requestnum++;
-            $('#load-more').text('Load More');
-        });
-
-    });
-
-}).controller('expensiveCtrl', function($scope, $http) {
-    
-    requestnum = 0;
-    $http.get('/data/expensive' + requestnum).then(function(response) {
+    $http.get('/data/' + query + requestnum).then(function(response) {
         $scope.postcodes = response.data;
         requestnum++;
     });

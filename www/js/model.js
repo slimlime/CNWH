@@ -9,18 +9,32 @@ app.config(function($routeProvider) {
   $routeProvider
   .when("/", {
     templateUrl : "templates/home.htm",
-    controller: 'homeCtrl'
+    controller: 'dataCtrl',
+    query: ''
   })
   .when("/cheapest", {
     templateUrl : "templates/home.htm",
-    controller: 'cheapestCtrl'
+    controller: 'dataCtrl',
+    query: 'cheapest/'
   })
   .when("/expensive", {
     templateUrl : "templates/home.htm",
-    controller: 'expensiveCtrl'
+    controller: 'dataCtrl',
+    query: 'expensive/'
+  })
+  .when("/popular", {
+    templateUrl : "templates/home.htm",
+    controller: 'dataCtrl',
+    query: 'popular/'
+  })
+  .when("/unpopular", {
+    templateUrl : "templates/home.htm",
+    controller: 'dataCtrl',
+    query: 'popular/'
   })
   .when("/postcode/:postcode", {
     templateUrl : "templates/postcode.htm",
-    controller: 'postcodeCtrl'
+    controller: 'dataCtrl',
+    query: 'popular/'
   })
 });
