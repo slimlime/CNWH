@@ -12,12 +12,26 @@
 
     <h4> Sort by... </h4>
 
-    <a href="#/expensive" class="btn btn-round btn-primary">Expensive</a>
-    <a href="#/cheapest" class="btn btn-round btn-primary">Cheapest</a>
-    <a href="#/popular" class="btn btn-round btn-primary">Most Popular</a>
-    <a href="#/unpopular" class="btn btn-round btn-primary">Least Popular</a>
-    <a href="#/highest-paid" class="btn btn-round btn-primary">Most Paid</a>
-    <a href="#/lowest-paid" class="btn btn-round btn-primary">Least Paid</a>
+    <a ng-if="query == '' " href="#/" class="btn btn-round btn-primary btn-fill">Top</a>
+    <a ng-if="query != '' " href="#/" class="btn btn-round btn-primary">Top</a>
+
+    <a ng-if="query != 'expensive/'" href="#/expensive" class="btn btn-round btn-primary">Expensive</a>
+    <a ng-if="query == 'expensive/'" href="#/" class="btn btn-round btn-primary btn-fill">Expensive</a>
+
+    <a ng-if="query != 'cheapest/'" href="#/cheapest" class="btn btn-round btn-primary">Cheapest</a>
+    <a ng-if="query == 'cheapest/'" href="#/" class="btn btn-round btn-primary btn-fill">Cheapest</a>
+
+    <a ng-if="query != 'popular/'" href="#/popular" class="btn btn-round btn-primary">Most Popular</a>
+    <a ng-if="query == 'popular/'" href="#/" class="btn btn-round btn-primary btn-fill">Most Popular</a>
+
+    <a ng-if="query != 'unpopular/'" href="#/unpopular" class="btn btn-round btn-primary">Least Popular</a>
+    <a ng-if="query == 'unpopular/'"  href="#/" class="btn btn-round btn-primary btn-fill">Least Popular</a>
+
+    <a ng-if="query != 'mostInc/'" href="#/highest-paid" class="btn btn-round btn-primary">Most Paid</a>
+    <a ng-if="query == 'mostInc/'" href="#/" class="btn btn-round btn-primary btn-fill">Most Paid</a>
+
+    <a ng-if="query != 'leastInc/'" href="#/lowest-paid" class="btn btn-round btn-primary">Least Paid</a>
+    <a ng-if="query == 'leastInc/'" href="#/" class="btn btn-round btn-primary btn-fill">Least Paid</a>
     <hr>
 
     </div>
