@@ -45,6 +45,30 @@ module.exports = function (models, logger) {
 					callback(place);
 				});
 		},
+		findMostPaid: function (cut, callback) {
+			models.Rent.find({})
+				.sort({
+					"avgIct": 1
+				}).skip(cut * 30).limit(30)
+				.exec(function (error, place) {
+					callback(place);
+				});
+		},
+		findLeastPaid: function (cut, callback) {
+			models.Rent.find({})
+				.sort({
+					"avgIct": -1
+				}).skip(cut * 30).limit(30)
+				.exec(function (error, place) {
+					callback(place);
+				});
+		},
+
+		addRentPrice: function (post, callback) {
+			models.Rent.find({}, function (data) {
+
+			})
+		},
 
 
 		/*

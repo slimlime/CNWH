@@ -11,6 +11,13 @@ var logger = require('winston');
 var content = '{"data": []}'
 var obj = JSON.parse(content);
 
+var publicConfig = {
+	key: 'AIzaSyATlr8T7UkQhk0Y2oyiR416UZa7KU28F_Q',
+	stagger_time: 1000, // for elevationPath
+	encode_polylines: false,
+	secure: true
+};
+var gmAPI = new GoogleMapsAPI(publicConfig);
 
 
 //server public files
