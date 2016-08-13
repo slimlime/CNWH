@@ -77,6 +77,14 @@ module.exports = function (models, logger) {
 			})
 		},
 
+		updatePlace: function (id, data) {
+			models.Rent.findByIdAndUpdate(id, data, function (error, number, raw) {
+				if (error) {
+					logger.info('Users', error);
+				}
+			});
+		},
+
 
 		/*
 		 * User Methods
@@ -115,7 +123,7 @@ module.exports = function (models, logger) {
 				if (error) {
 					console.log(error);
 				}
-				console.log("NEW Place CREATED id: " + place._id);
+				//console.log("NEW Place CREATED id: " + place._id);
 				callback(place);
 			});
 		},

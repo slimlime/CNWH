@@ -14,6 +14,7 @@ var fill = [];
 
 
 
+
 //server public files
 app.use(express.static(__dirname + '/www'));
 
@@ -34,12 +35,13 @@ var controller = {
 
 
 if (c.create) {
+	var mapData = JSON.parse(fs.readFileSync('./subs.json', 'utf8'));
 	controller.Rent.drop(function () {
 		fs.createReadStream("csv/rent.csv")
 			.pipe(csv())
 			.on("data", function (data) {
-				console.log(data);
-				var data = {
+				//console.log(data);
+				var data2 = {
 					"post": data[0].substr(3),
 					"avgInc": data[4],
 					"avgRent": data[6],
@@ -49,8 +51,8 @@ if (c.create) {
 					"avgAge": data[3],
 					"pop": data[2]
 				};
-				obj['data'].push(data);
-				controller.Rent.createPlace(data, function (place) {
+				obj['data'].push(data2);
+				controller.Rent.createPlace(data2, function (place) {
 					//console.log("place created");
 				});
 			})
@@ -62,10 +64,43 @@ if (c.create) {
 					if (err) throw err;
 					console.log('It\'s saved!');
 				});
+				addExtras(mapData);
 
 			});
 	});
 
+}
+
+function addExtras(mapData) {
+	controller.Rent.getPlaces(function (data) {
+		//console.log(data);
+		for (var i = 0; i < data.length; i++) {
+			for (var x = 0; x < mapData.length; x++) {
+				//console.log(mapData[x]);
+				if (mapData[x] && mapData[x].status == 'OK') {
+					if (mapData[x].results[0].address_components)
+
+						if (data[i].post == mapData[x].results[0].address_components[0].long_name) {
+
+						for (var temp = 0; temp < mapData[x].results[0].address_components.length; temp++) {
+							//console.log(data[i].closestCity, 0);
+							if (mapData[x].results[0].address_components[temp].types[0] == "locality" || mapData[x].results[0].address_components[temp].types[0] == "political")
+								data[i].closestCity = mapData[x].results[0].address_components[temp].short_name;
+							//console.log(data[i].closestCity, 1);
+
+						}
+						if (typeof mapData[x].results[0].postcode_localities != "undefined")
+							data[i].subs = mapData[x].results[0].postcode_localities;
+						//console.log(data[i].closestCity, 2);
+						controller.Rent.updatePlace(data[i]._id, data[i]);
+						break;
+					}
+				}
+			}
+			console.log("finished one" + i);
+		}
+
+	});
 }
 
 
