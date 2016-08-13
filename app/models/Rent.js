@@ -8,7 +8,9 @@ module.exports = function (mongoose, schemas) {
 		post: String,
 		avgRent: String,
 		avgInc: String,
-		avgMortgage: String
+		avgMortgage: String,
+		closestCity: String,
+		subs: [String]
 	});
 	return mongoose.model('Rent', schemas.Rent);
 };
