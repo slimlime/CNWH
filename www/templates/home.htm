@@ -1,6 +1,35 @@
-<div ng-repeat="postcode in postcodes" class="col-md-4"> 
+<div ng-repeat="postcode in postcodes" class="col-md-4">
 
-    {{ postcode.postcode}}
+<div class="card card-background">
+<div class="image" style="background-image: url('/img/gold_coast.jpg'); background-size: cover; background-position: center center;">
+    <img src="assets/img/thumb.jpg" alt="..." style="display: none;">
+    <div class="filter"></div>
+</div>
+    <div class="content">
+    <h5 class="price">$ {{ postcode.avgInc }}
+            <a href="#" class="pull-right">
+            <i class="fa fa-heart"></i>
+            </a>
+        </h5>
+    <a href="#"><br>
+        <h4 class="title">{{ postcode.post }}</h4>
+        <p>Suburb, Suburb, Suburb, Suburb </p>
+    </a>
+</div>
+<div class="footer">
+    <div class="author">
+        <a href="#">
+            <img src="/img/default-avatar.png" alt="..." class="avatar">
+            <span>Alex</span>
+        </a>
+    </div>
+    <div class="stats pull-right">
+        <i class="fa fa-comment"></i>  253 Comments
+    </div>
+</div>
+</div>
+</div>
 
-
+<div class="col-md-3 col-md-offset-6">
+    <button href="#fakelink" class="btn btn-block btn-lg btn-round btn-info">Load More</button>
 </div>
