@@ -1,8 +1,12 @@
-app.controller('dataCtrl', function($scope, $http, $route) {
+app.controller('dataCtrl', function($scope, $http, $route, $routeParams) {
 
     query = $route.current.query;
     $scope.query = query;
     
+    if (query == 'search/postcode/') {
+        query += $routeParams.postcode;
+    }
+
     requestnum = 0;
     $http.get('/data/' + query + requestnum).then(function(response) {
         $scope.postcodes = response.data;
