@@ -45,7 +45,14 @@ module.exports = function (models, logger) {
 		},
 
 		findAllNum: function (cut, callback) {
-			models.Rent.find({})
+			models.Rent.find({
+					"avgInc": {
+						"$gt": 500
+					},
+					"avgRent": {
+						"$gt": 100
+					}
+				})
 				.skip(cut * 30).limit(30)
 				.exec(function (error, place) {
 					callback(place);
