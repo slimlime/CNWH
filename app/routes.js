@@ -104,8 +104,8 @@ module.exports = function (app, controller, fs) {
 		})
 	});
 
-	app.get('/data/search/postcode/:post', function (req, res) {
-		controller.Rent.findPosts(req.params.post, function (data) {
+	app.get('/data/search/postcode/:post/:cut', function (req, res) {
+		controller.Rent.findPosts(req.params.post, req.params.cut, function (data) {
 			res.send(data);
 		})
 	});

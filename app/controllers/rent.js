@@ -27,12 +27,13 @@ module.exports = function (models, logger) {
 				});
 		},
 
-		findPosts: function (data, callback) {
+		findPosts: function (data, cut, callback) {
 			models.Rent.find({
-				"$where": "/" + data + "/.test(this.post)"
-			}, function (error, place) {
-				callback(place);
-			});
+					"$where": "/" + data + "/.test(this.post)"
+				}).skip(cut * 30).limit(30)
+				.exec(function (error, place) {
+					callback(place);
+				});
 
 		},
 
