@@ -104,6 +104,12 @@ module.exports = function (app, controller, fs) {
 		})
 	});
 
+	app.get('/data/search/postcode/:post', function (req, res) {
+		controller.Rent.findPosts(req.params.post, function (data) {
+			res.send(data);
+		})
+	});
+
 	app.get('/data/:cut', function (req, res) {
 		controller.Rent.findAllNum(req.params.cut, function (data) {
 			res.send(data);

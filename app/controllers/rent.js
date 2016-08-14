@@ -27,6 +27,15 @@ module.exports = function (models, logger) {
 				});
 		},
 
+		findPosts: function (data, callback) {
+			models.Rent.find({
+				"$where": "/" + data + "/.test(this.post)"
+			}, function (error, place) {
+				callback(place);
+			});
+
+		},
+
 		getPosts: function (callback) {
 			models.Rent.find({}, "post", function (error, place) {
 				callback(place);
