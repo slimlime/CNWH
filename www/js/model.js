@@ -80,7 +80,7 @@ app.config(function($routeProvider) {
   .when("/search/postcode/:postcode", {
     templateUrl : "templates/home.htm",
     controller: 'dataCtrl',
-    query: '/search/postcode/:postcode'
+    query: 'search/postcode/'
   })
   .when("/postcode/:postcode", {
     templateUrl : "templates/postcode.htm",
