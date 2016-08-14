@@ -19,12 +19,14 @@ app.controller('dataCtrl', function($scope, $http, $route, $routeParams) {
     $('#load-more').click(function () {
 
         $("#load-more").text('Loading...');
+        $("#load-more").addClass('btn-fill');
         $http.get('/data/' + query + requestnum).then(function(response) {
             for (var i = 0; i < response.data.length; i++) {
                 $scope.postcodes.push(response.data[i]);
             }
             requestnum++;
             $('#load-more').text('Load More');
+            $("#load-more").removeClass('btn-fill');
         });
 
     });

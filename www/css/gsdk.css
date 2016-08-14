@@ -1883,7 +1883,7 @@ input.ct-red + span + label + span.switch-right {
 .navbar .navbar-brand {
   font-weight: 600;
   margin: 5px 0px;
-  padding: 20px 15px;
+  padding: 10px 15px;
   font-size: 20px;
 }
 .navbar .navbar-nav > li > a {
