@@ -15,6 +15,7 @@
     "googlemaps": "^1.11.1",
     "mongodb": "latest",
     "mongoose": "4.0.3",
-    "winston": "latest"
+    "winston": "latest",
+    "tinify" : "latest"
   }
 }
