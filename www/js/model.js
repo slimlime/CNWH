@@ -77,6 +77,11 @@ app.config(function($routeProvider) {
     controller: 'dataCtrl',
     query: 'wa/'
   })
+  .when("/search/postcode/:postcode", {
+    templateUrl : "templates/home.htm",
+    controller: 'dataCtrl',
+    query: '/search/postcode/:postcode'
+  })
   .when("/postcode/:postcode", {
     templateUrl : "templates/postcode.htm",
     controller: 'postcodeCtrl',
