@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Postcode Info</title>
+    <title>Aus Living</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -34,15 +34,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-                      <a class="navbar-brand" href="#">Postcode Info</a>
+                      <a class="navbar-brand" href="#">Aus Living</a>
                     </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navigation-default2">
-                      <ul class="nav navbar-nav">
+                      <ul class="nav navbar-nav navbar-right">
                         <!--<li><a href="#">Link</a></li>-->
-                        <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <!--<li class="dropdown">-->
+                              <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                 States & Territories
                                 <b class="caret"></b>
                               </a>
@@ -54,21 +54,21 @@
                                 <li><a href="#/nt">Northern Territory</a></li>
                                 <li><a href="#/wa">Western Australia</a></li>
                                 <li><a href="#/tas">Tasmania</a></li>
-                              </ul>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" data-toggle="search" class="hidden-xs"><i class="fa fa-search"></i></a>
+                              </ul>-->
+                              <li><a href="#/nsw">NSW</a></li>
+                                <li><a href="#/qld">QLD</a></li>
+                                <li><a href="#/vic">VIC</a></li>
+                                <li><a href="#/act">ACT</a></li>
+                                <li><a href="#/nt">NT</a></li>
+                                <li><a href="#/wa">WA</a></li>
+                                <li><a href="#/tas">TAS</a></li>
                         </li>
                       </ul>
-                       <form id="nav-form" class="navbar-form navbar-left navbar-search-form" role="search" ng-submit="searchForm()" >
-                         <div class="form-group">
-                              <input type="text" id="search" value="" class="form-control" placeholder="Enter a Postcode...">
-                         </div>
-                      </form>
-                      <ul class="nav navbar-nav navbar-right">
+                       
+                      <!--<ul class="nav navbar-nav navbar-right">
                             <li><button class="btn btn-default btn-simple">Register</button></li>
                             <li><button class="btn btn-round btn-fill btn-info">Sign in</button></li>
-                       </ul>
+                       </ul>-->
 
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container-fluid -->
@@ -97,113 +97,42 @@
 
             <div class="container">
                 <div class="row">
-                                     <div class="col-md-3">
+
+
+                    <div class="row">
+
+                        <div class="col-md-8 col-md-offset-2">
+                    
+                    <div class="col-md-4">
                         <h5 class="title">Company</h5>
                         <nav>
                         <ul>
-                           <li>
-                                <a href="#">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Company
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Portfolio
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                   Blog
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                   About Us
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-info">
-                                   We are hiring!
-                                </a>
-                            </li>
+                            <li><a href="#/top">Top</a></li>
+                            <li><a href="#/expensive">Expensive</a></li>
+                            <li><a href="#/cheapest">Cheapest</a></li>
+                            <li><a href="#/popular">Popular</a></li>
+                            <li><a href="#/unpopular">Unpopular</a></li>
+                            <li><a href="#/highest-paid">Highest Paid</a></li>
+                            <li><a href="#/lowest-paid">Lowest Paid</a></li>
                         </ul>
                         </nav>
                     </div>
-                    <div class="col-md-3">
-                        <h5 class="title">Company</h5>
-                        <nav>
-                        <ul>
-                           <li>
-                                <a href="#">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Company
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Portfolio
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                   Blog
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                   About Us
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-info">
-                                   We are hiring!
-                                </a>
-                            </li>
-                        </ul>
-                        </nav>
-                    </div>
-                    <div class="col-md-3">
-                        <h5 class="title">Help and Support</h5>
+                    <div class="col-md-4">
+                        <h5 class="title">View by State/Territory</h5>
                         <nav>
                             <ul>
-                                <li>
-                                    <a href="#">
-                                       Contact Us
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                       How it works
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Terms &amp; Conditions
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Company Policy
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                       Money Back
-                                    </a>
-                                </li>
+                                <li><a href="#/nsw">New South Whales</a></li>
+                                <li><a href="#/qld">Queensland</a></li>
+                                <li><a href="#/vic">Victoria</a></li>
+                                <li><a href="#/act">Australian Capital Territory</a></li>
+                                <li><a href="#/nt">Northern Territory</a></li>
+                                <li><a href="#/wa">Western Australia</a></li>
+                                <li><a href="#/tas">Tasmania</a></li>
+                        </li>
                             </ul>
                         </nav>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <h5 class="title">In Australia <img src="/img/flags/AU.png"></h5>
                         <nav class="numbers">
                             <ul>
@@ -219,6 +148,9 @@
 
                             </ul>
                         </nav>
+                    </div>
+
+                    </div>
                     </div>
                 </div>
                 <hr>

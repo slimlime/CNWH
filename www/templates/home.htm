@@ -10,6 +10,8 @@
         <option value="unpopular">Population (Low to Low)</option>
     </select>-->
 
+    <div class="hide-filters" ng-if="query != 'qld/' || query != 'wa/' ">
+
     <h4> Sort by... </h4>
 
     <a ng-if="query == '' " href="#/" class="btn btn-round btn-primary btn-fill">Top</a>
@@ -33,6 +35,30 @@
     <a ng-if="query != 'leastInc/'" href="#/lowest-paid" class="btn btn-round btn-primary">Least Paid</a>
     <a ng-if="query == 'leastInc/'" href="#/" class="btn btn-round btn-primary btn-fill">Least Paid</a>
     <hr>
+
+    </div>
+
+    <h4> Search by Postcode </h4>
+
+
+        <form ng-submit="searchForm()" id="search-form" class="" >
+            <div class="row">
+                <div class="col-md-4">
+
+                    <div class="form-group">
+                        <input type="text" id="search" value="" class="form-control" placeholder="Enter a Postcode...">
+                    </div>
+
+                </div>
+
+                <div class="col-md-2">
+
+                    <input type="submit" class="btn btn-primary" value="Search">
+
+                </div>
+            </div>
+        </form>
+    </div>
 
     </div>
 

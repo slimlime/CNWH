@@ -189,8 +189,9 @@
                             </div>
                              <div class="content text-center">
                                 <a href="#"><br>
-                                    <h1 class="title"> {{postcode.weather.item.condition.temp}}˚ {{postcode.weather.units.temperature}}</h1>
+                                    <h1 class="title"> {{ (postcode.weather.item.condition.temp - 32)  * 5/9  | number:0}}˚ C</h1>
                                     <h5>{{postcode.weather.item.condition.text}}</h5>
+                                    <h3></h3>
                                 </a>
                             </div>
                             <div class="footer">

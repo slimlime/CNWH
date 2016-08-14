@@ -4,7 +4,7 @@ app.controller('dataCtrl', function($scope, $http, $route, $routeParams) {
     $scope.query = query;
     
     if (query == 'search/postcode/') {
-        query += $routeParams.postcode;
+        query += $routeParams.postcode + '/';
     }
 
     requestnum = 0;
@@ -28,6 +28,14 @@ app.controller('dataCtrl', function($scope, $http, $route, $routeParams) {
         });
 
     });
+
+
+    $scope.searchForm = function() {
+
+        console.log('form submit');
+        window.location = '#/search/postcode/' + $("#search").val();
+
+    };
 
 }).controller('postcodeCtrl', function($scope, $http, $routeParams) {
 
